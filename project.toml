@@ -1,0 +1,30 @@
+# ============================================================================
+# TEXTEDIT -- add-in metadata for fxconv (the gint / fxSDK packaging tool).
+#
+# fxconv reads this file to build the final textedit.g3a: it takes the internal
+# name/title below plus the menu icon asset and embeds them into the .g3a.
+#
+# If your installed gint/fxSDK is an OLDER version that does NOT read
+# project.toml, use the legacy path instead:
+#   * delete this file's [[target...assets]] table (or the whole file), and
+#   * add to the Makefile:   GINT_ICON := assets/icon-uns.png
+# The gint Makefile.include will then pick up the icon directly.
+# ============================================================================
+
+[project]
+# Internal name shown in the calculator's main menu. Must be <= 8 chars,
+# uppercase, no spaces. "TEXTEDIT" is exactly 8.
+name = "TEXTEDIT"
+# Human-readable title (also shown in the menu).
+title = "TextEdit"
+
+# Assets for the fx-CG50 (Graph 35+ / 75 / 90+E, fx-CG10/20/50).
+# 'name' must be "icon" (the 92x64 main-menu icon). fxconv infers the type
+# from the name, so no 'type' field is required.
+# NOTE: this add-in is built through the Makefile + project.cfg path, which
+# passes both menu icons to fxgxa (--icon-uns / --icon-sel); fxconv never reads
+# this table. It is kept so the file stays valid if the Makefile path is
+# ever dropped.
+[[target.fxcg50.assets]]
+name = "icon"
+source = "assets/icon-uns.png"
