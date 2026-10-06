@@ -11,4 +11,8 @@ Remember to use MSYS2 to built if you are using Windows.
 We added a range of settings that you can makes your editing more confortable.
 
 You can change `character` and `line` spaces, `fonts`, Auto indentation, character set and even 
-confirm on delete, unsave warning is also decided by *you*.
+confirm on delete, unsave warning.
+
+They are decided by *you*.
+
+*Also*, we can highlight the syntax of your codes.
